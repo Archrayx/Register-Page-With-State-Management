@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap");
+.main-nav {
+  background: #24252A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #f87777;
+}
+
+.main-nav li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.main-nav li a {
+  color: #f87777;
+  text-decoration: none;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+.main-nav li a:hover {
+  color: #0088A9;
+}
+/*# sourceMappingURL=app.component.css.map */

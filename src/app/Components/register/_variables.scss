@@ -1,0 +1,24 @@
+$primaryBtn: #0088a9;
+$linkColor: orange;
+$textColor: rgb(248, 119, 119);
+@mixin flexCenter() {
+    background: #24252A;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: $textColor;
+}
+
+@mixin links() {
+    color: $textColor;
+    text-decoration: none;
+    transition: all .3s ease 0s;
+    &:hover {
+        color: #0088A9;
+    }
+}
+
+@mixin responsiveText {
+    font-size: 1.25vw;
+}

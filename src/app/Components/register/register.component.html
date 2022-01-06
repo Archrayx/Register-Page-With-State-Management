@@ -1,0 +1,30 @@
+<div class="auth-page">
+    <div class=" container-page">
+        <div class="row">
+            <div class="col">
+                <h1 class="sign-up-text">
+                    Sign Up
+                </h1>
+
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <fieldset>
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control" placeholder="User" formControlName="username">
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                        </fieldset>
+                        <button class="btn btn-outline-secondary" type="submit">Sign Up</button>
+                        <p>
+                            <a [routerLink]="['login']">Have an account?</a>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

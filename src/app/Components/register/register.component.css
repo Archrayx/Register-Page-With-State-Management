@@ -1,0 +1,38 @@
+.auth-page {
+  background: #24252A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #f87777;
+}
+
+.col {
+  width: 25vw;
+  height: 100vh;
+  margin-top: 10vh;
+}
+
+.col p a {
+  color: #f87777;
+  text-decoration: none;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+.col p a:hover {
+  color: #0088A9;
+}
+
+.col h1 {
+  padding-bottom: 30px;
+}
+
+input {
+  font-size: 1.25vw;
+}
+/*# sourceMappingURL=register.component.css.map */

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
+@import "./Components/register/variables";
+.main-nav {
+    @include flexCenter();
+    li {
+        a {
+            @include links();
+        }
+        display: inline-block;
+        padding: 20px;
+    }
+}

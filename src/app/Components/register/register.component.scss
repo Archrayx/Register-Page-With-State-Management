@@ -1,0 +1,22 @@
+@import "./variables";
+.auth-page {
+    @include flexCenter();
+}
+
+.col {
+    width: 25vw;
+    height: 100vh;
+    margin-top: 10vh;
+    p {
+        a {
+            @include links();
+        }
+    }
+    h1 {
+        padding-bottom: 30px;
+    }
+}
+
+input {
+    @include responsiveText();
+}
