@@ -1,13 +1,13 @@
 <nav class="main-nav">
     <ul>
-        <li>
+        <li [hidden]="(isLoggedIn$ | async)">
             <a [routerLink]="['register']">Register</a>
         </li>
-        <li>
+        <li [hidden]="(isLoggedIn$ | async)">
             <a [routerLink]="['login']">Login</a>
 
         </li>
-        <li>
+        <li [hidden]="!(isLoggedIn$ | async)">
             <a [routerLink]="['content']">Home</a>
 
         </li>

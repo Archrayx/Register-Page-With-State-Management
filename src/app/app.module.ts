@@ -9,7 +9,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import { BackendErrorMessagesModule } from './Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +17,7 @@ import { BackendErrorMessagesModule } from './Components/backend-error-messages/
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    BackendErrorMessagesModule,
+
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 5,

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { registerAction } from 'src/app/store/actions/register.action';
 import {
+  isLoggedInSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from 'src/app/store/selectors';
@@ -19,6 +20,7 @@ import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.inter
 export class RegisterComponent implements OnInit {
   form: FormGroup;
   backendErrors$: Observable<BackendErrorsInterface | null>;
+  isLoggedIn$: Observable<boolean> | null;
   isSubmitting$: Observable<boolean>; //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
   //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
 
@@ -41,6 +43,7 @@ export class RegisterComponent implements OnInit {
     //        etc...())
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
+
     console.log('isSubmitting$', this.isSubmitting$);
   }
 
