@@ -1,4 +1,6 @@
 <div class="auth-page">
+
+    ==={{isSubmitting$ | async}}===
     <div class=" container-page">
         <div class="row">
             <div class="col">
@@ -18,7 +20,7 @@
                         <fieldset class="form-group">
                             <input type="password" class="form-control" placeholder="Password" formControlName="password">
                         </fieldset>
-                        <button class="btn btn-outline-secondary" type="submit">Sign Up</button>
+                        <button class="btn btn-outline-secondary" type="submit" [disabled]="isSubmitting$ | async">Sign Up</button>
                         <p>
                             <a [routerLink]="['login']">Have an account?</a>
                         </p>

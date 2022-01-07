@@ -1,7 +1,11 @@
+import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { registerAction } from 'src/app/store/actions';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { registerAction } from 'src/app/store/actions/register.action';
+import { isSubmittingSelector } from 'src/app/store/selectors';
 
 @Component({
   selector: 'app-register',
@@ -9,12 +13,29 @@ import { registerAction } from 'src/app/store/actions';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  form!: FormGroup;
+  form: FormGroup;
+  isSubmitting$: Observable<boolean>; //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
+  //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(
+    private fb: FormBuilder,
+    private store: Store // private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
+    this.initializeValues();
+  }
+
+  initializeValues(): void {
+    //use .pipe. new version of rxjs makes using alt functions easier for chaining with 'pipe operators'
+    //for example before it would be ==> this.store.select(stuff).filter.map.etc..
+    //new version allows for in-pipe chaining ==>
+    //.pipe(select(stuff),
+    //       map((stuff:type)=> "do something")),
+    //        etc...())
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    console.log('isSubmitting$', this.isSubmitting$);
   }
 
   initializeForm(): void {
@@ -29,5 +50,12 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     console.log('Submit', this.form.value, this.form.valid);
     this.store.dispatch(registerAction(this.form.value));
+
+    //NOT GOOD PRACTICE TO CALL HTTP REQUEST IN COMPONENT
+    // this.authService
+    //   .register(this.form.value)
+    //   .subscribe((currentUser: CurrentUserInterface) => {
+    //     console.log('current user: ', currentUser);
+    //   });
   }
 }
