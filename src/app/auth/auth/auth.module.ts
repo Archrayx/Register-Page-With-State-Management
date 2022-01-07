@@ -9,6 +9,7 @@ import { reducers } from 'src/app/store/reducer';
 import { AuthService } from 'src/app/services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
 import { RegisterEffect } from 'src/app/store/effects/register.effects';
+import { PersistanceService } from 'src/app/services/persistance.service';
 
 const routes = [
   {
@@ -26,6 +27,6 @@ const routes = [
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([RegisterEffect]),
   ],
-  providers: [AuthService],
+  providers: [AuthService, PersistanceService],
 })
 export class AuthModule {}
