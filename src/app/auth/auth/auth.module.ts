@@ -1,3 +1,4 @@
+import { HomeComponent } from './../../Components/home/home.component';
 import { BackendErrorMessagesModule } from './../../Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,9 +17,13 @@ const routes = [
     path: 'register',
     component: RegisterComponent,
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
 ];
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, HomeComponent],
   imports: [
     CommonModule,
     BackendErrorMessagesModule,
