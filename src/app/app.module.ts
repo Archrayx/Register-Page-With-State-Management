@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    StoreModule.forRoot([]),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 5,
       logOnly: environment.production,
