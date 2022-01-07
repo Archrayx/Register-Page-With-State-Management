@@ -4,9 +4,12 @@
     <div class=" container-page">
         <div class="row">
             <div class="col">
-                <h1 class="sign-up-text">
+                <h1>
                     Sign Up
                 </h1>
+                <p class="error-text">
+                    <mc-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async"></mc-backend-error-messages>
+                </p>
 
                 <form [formGroup]="form" (ngSubmit)="onSubmit()">
                     <fieldset>
@@ -20,10 +23,11 @@
                         <fieldset class="form-group">
                             <input type="password" class="form-control" placeholder="Password" formControlName="password">
                         </fieldset>
-                        <button class="btn btn-outline-secondary" type="submit" [disabled]="isSubmitting$ | async">Sign Up</button>
                         <p>
                             <a [routerLink]="['login']">Have an account?</a>
                         </p>
+                        <button class="btn btn-outline-secondary" type="submit" [disabled]="isSubmitting$ | async">Sign Up</button>
+
                     </fieldset>
                 </form>
             </div>

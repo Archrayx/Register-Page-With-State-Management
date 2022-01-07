@@ -24,3 +24,8 @@ export const isSubmittingSelector = createSelector(
 //the above selector can be seen as a getter, the getter is for a property, isSubmitting. the above code can be reused for other prop getters asd well
 //type of authstateinteface is implicitly written for other devs to understand the code space better. also, referencing implicitly can be seen when wanting
 //to inspect the areas where that interface is used in other code areas.
+
+export const validationErrorsSelector = createSelector(
+  authFeatureSelector,
+  (authState: AuthStateInterface) => authState.validationErrors
+);

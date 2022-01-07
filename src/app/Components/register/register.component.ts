@@ -5,7 +5,12 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { registerAction } from 'src/app/store/actions/register.action';
-import { isSubmittingSelector } from 'src/app/store/selectors';
+import {
+  isSubmittingSelector,
+  validationErrorsSelector,
+} from 'src/app/store/selectors';
+import { RegisterRequestInterface } from 'src/app/shared/types/registerRequest.interface';
+import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +19,7 @@ import { isSubmittingSelector } from 'src/app/store/selectors';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
+  backendErrors$: Observable<BackendErrorsInterface | null>;
   isSubmitting$: Observable<boolean>; //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
   //<-- dollar sign is used for streaming variables. or vars that are for http protocol and rxjs. also denotes as an observable
 
@@ -35,6 +41,7 @@ export class RegisterComponent implements OnInit {
     //       map((stuff:type)=> "do something")),
     //        etc...())
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
     console.log('isSubmitting$', this.isSubmitting$);
   }
 
@@ -49,7 +56,10 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     console.log('Submit', this.form.value, this.form.valid);
-    this.store.dispatch(registerAction(this.form.value));
+    const request: RegisterRequestInterface = {
+      user: this.form.value,
+    };
+    this.store.dispatch(registerAction({ request }));
 
     //NOT GOOD PRACTICE TO CALL HTTP REQUEST IN COMPONENT
     // this.authService

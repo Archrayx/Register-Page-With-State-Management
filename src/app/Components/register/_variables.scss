@@ -1,8 +1,9 @@
-$primaryBtn: #0088a9;
-$linkColor: orange;
+$errorText: #0088a9;
 $textColor: rgb(248, 119, 119);
+$altTextColor: rgb(247, 198, 198);
+$backGround:#24252A;
 @mixin flexCenter() {
-    background: #24252A;
+    background: $backGround;
     display: flex;
     justify-content: center;
     font-family: "Montserrat", sans-serif;
@@ -13,9 +14,9 @@ $textColor: rgb(248, 119, 119);
 @mixin links() {
     color: $textColor;
     text-decoration: none;
-    transition: all .3s ease 0s;
+    transition: all .2s ease 0s;
     &:hover {
-        color: #0088A9;
+        color: $altTextColor;
     }
 }
 

@@ -9,6 +9,8 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { registerAction } from '../actions/register.action';
 import { of } from 'rxjs';
+import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class RegisterEffect {
@@ -21,8 +23,10 @@ export class RegisterEffect {
             return registerSuccessAction({ currentUser });
           }),
 
-          catchError(() => {
-            return of(registerFailureAction());
+          catchError((errorResponse: HttpErrorResponse) => {
+            return of(
+              registerFailureAction({ errors: errorResponse.error.errors })
+            );
           })
         );
       })

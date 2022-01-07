@@ -7,6 +7,9 @@
     width: 25vw;
     height: 100vh;
     margin-top: 10vh;
+    .error-text {
+        color: $errorText;
+    }
     p {
         a {
             @include links();
