@@ -1,4 +1,6 @@
-# BuySellBot
+# Register Front-End Angular page
+
+this project was created with an opera GX thematic registe page that uses NGRX as a state control package. fully iomplements stores, actions, selectors, and Reducers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
