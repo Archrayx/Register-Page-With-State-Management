@@ -5,7 +5,7 @@ import {
   registerAction,
   registerFailureAction,
   registerSuccessAction,
-} from './actions/register.action';
+} from '../auth/store/actions/register.action';
 
 const initialState: AuthStateInterface = {
   isSubmitting: false,

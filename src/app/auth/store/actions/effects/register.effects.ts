@@ -1,14 +1,14 @@
-import { PersistanceService } from './../../services/persistance.service';
+import { PersistanceService } from '../../../../services/persistance.service';
 import {
   registerFailureAction,
   registerSuccessAction,
-} from './../actions/register.action';
-import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
+} from '../register.action';
+import { CurrentUserInterface } from '../../../../shared/types/currentUser.interface';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
-import { registerAction } from '../actions/register.action';
+import { registerAction } from '../register.action';
 import { of } from 'rxjs';
 
 import { HttpErrorResponse } from '@angular/common/http';

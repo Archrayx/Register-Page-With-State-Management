@@ -1,5 +1,5 @@
-import { HomeComponent } from './../../Components/home/home.component';
-import { BackendErrorMessagesModule } from './../../Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
+import { HomeComponent } from '../../../../Components/home/home.component';
+import { BackendErrorMessagesModule } from '../../../../Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from 'src/app/Components/register/register.component';
@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from 'src/app/store/reducer';
 import { AuthService } from 'src/app/services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
-import { RegisterEffect } from 'src/app/store/effects/register.effects';
+import { RegisterEffect } from 'src/app/auth/store/actions/effects/register.effects';
 import { PersistanceService } from 'src/app/services/persistance.service';
 
 const routes = [

@@ -1,8 +1,8 @@
-import { BackendErrorsInterface } from './../../shared/types/backendErrors.interface';
-import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
+import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';
+import { CurrentUserInterface } from '../../../shared/types/currentUser.interface';
 import { createAction, props } from '@ngrx/store';
-import { RegisterRequestInterface } from '../../shared/types/registerRequest.interface';
-import { ActionTypes } from '../actionTypes';
+import { RegisterRequestInterface } from '../../../shared/types/registerRequest.interface';
+import { ActionTypes } from '../../../store/actionTypes';
 
 export const registerAction = createAction(
   ActionTypes.REGISTER,
