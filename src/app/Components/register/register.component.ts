@@ -8,7 +8,7 @@ import {
   isLoggedInSelector,
   isSubmittingSelector,
   validationErrorsSelector,
-} from 'src/app/store/selectors';
+} from './../../auth/store/actions/selectors';
 import { RegisterRequestInterface } from 'src/app/shared/types/registerRequest.interface';
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 

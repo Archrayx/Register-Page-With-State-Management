@@ -1,3 +1,4 @@
+import { reducers } from '../reducer';
 import { HomeComponent } from '../../../../Components/home/home.component';
 import { BackendErrorMessagesModule } from '../../../../Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,6 @@ import { RegisterComponent } from 'src/app/Components/register/register.componen
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from 'src/app/store/reducer';
 import { AuthService } from 'src/app/services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
 import { RegisterEffect } from 'src/app/auth/store/actions/effects/register.effects';

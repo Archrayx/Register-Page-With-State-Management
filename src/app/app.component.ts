@@ -1,7 +1,7 @@
+import { isLoggedInSelector } from './auth/store/actions/selectors';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { isLoggedInSelector } from './store/selectors';
 
 @Component({
   selector: 'app-root',
