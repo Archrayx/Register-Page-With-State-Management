@@ -21,8 +21,10 @@
     "@ngrx/effects": "^13.0.2",
     "@ngrx/store": "^13.0.2",
     "@ngrx/store-devtools": "^13.0.2",
+    "cors": "^2.8.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "twit": "^2.2.11",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

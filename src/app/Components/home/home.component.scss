@@ -1,5 +1,6 @@
 @import '/src/app/Components/register/variables';
 div {
+
     @include flexCenter();
     height: 100vh;
     /* The image used */
