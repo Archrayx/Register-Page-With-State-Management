@@ -1,3 +1,4 @@
+import { TypeofPipe } from './../../../../pipe/typeof.pipe';
 import { reducers } from '../reducer';
 import { HomeComponent } from '../../../../Components/home/home.component';
 import { BackendErrorMessagesModule } from '../../../../Components/backend-error-messages/backend-error-messages/backend-error-messages.module';
@@ -11,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
 import { RegisterEffect } from 'src/app/auth/store/actions/effects/register.effects';
 import { PersistanceService } from 'src/app/services/persistance.service';
+import { TwitterService } from 'src/app/services/twitter.service';
 
 const routes = [
   {
@@ -23,7 +25,7 @@ const routes = [
   },
 ];
 @NgModule({
-  declarations: [RegisterComponent, HomeComponent],
+  declarations: [RegisterComponent, HomeComponent, TypeofPipe],
   imports: [
     CommonModule,
     BackendErrorMessagesModule,
@@ -32,6 +34,6 @@ const routes = [
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([RegisterEffect]),
   ],
-  providers: [AuthService, PersistanceService],
+  providers: [AuthService, PersistanceService, TwitterService, TypeofPipe],
 })
 export class AuthModule {}

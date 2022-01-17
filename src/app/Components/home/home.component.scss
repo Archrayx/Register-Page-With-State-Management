@@ -1,8 +1,8 @@
 @import '/src/app/Components/register/variables';
 div {
 
-    @include flexCenter();
-    height: 100vh;
+    @include flexList();
+    height: auto;
     /* The image used */
     background-position: center;
     /* Center the image */
@@ -10,4 +10,5 @@ div {
     /* Do not repeat the image */
     background-size: cover;
     /* Resize the background image to cover the entire container */
+
 }

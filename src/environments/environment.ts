@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'https://conduit.productionready.io/api',
   TWITTER_API_URL:
-    'https://api.twitter.com/2/tweets/search/recent?query=sol coin&max_results=100',
+    'https://api.twitter.com/2/tweets/search/recent?query=sol coin&max_results=5',
   TWITTER_API_KEY: '90PKASnlOveSDRFTYvdPXJeKo',
   TWITTER_API_SECRET: '1xGkCxUADuuNYLNMY2N4RGvJUD9fw8wDyKqdzW3tWUkLL3E6hN',
   TWITTER_BEARER_TOKEN:

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const Twitter = require('twit');
 const app = express();
 
@@ -10,15 +11,18 @@ const client = new Twitter({
   access_token: '1023092179-eaHRQxzXrQnrDpz9nGRBjPY70xZyjRGnGWMtW7p',
   access_token_secret: 'hUmbFdsl4pBkMc9NVsfOXDUuU5chD5FiTp2rEIxOmvvOc',
 });
+app.use(cors());
+app.use(require('body-parser').json());
 
 app.get('/home_timeline', (req, res) => {
-    const params = { tweet_mode: 'extended', count: 10 };
+
+    const params = { query: 'sol coin', max_results:20 };
 
     client
-      .get(`statuses/home_timeline`, params)
-      .then(timeline => {
+      .get(`https://api.twitter.com/2/tweets/search/recent`,params)
+      .then(result => {
 
-        res.send(timeline);
+        res.send(result);
       })
       .catch(error => {
       res.send(error);

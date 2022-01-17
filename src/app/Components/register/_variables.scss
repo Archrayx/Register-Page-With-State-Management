@@ -11,6 +11,17 @@ $backGround:#24252A;
     color: $textColor;
 }
 
+
+@mixin flexList(){
+  background: $backGround;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    color: $textColor;
+
+}
 @mixin links() {
     color: $textColor;
     text-decoration: none;
